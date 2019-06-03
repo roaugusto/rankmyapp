@@ -9,8 +9,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import jsonQuery from 'json-query'
 import moment from 'moment'
 
-import './Home.css'
-//import { mockRanks } from './test.js'
+import '../styles/Home.css'
 
 import TableHead from '../components/TableHead'
 import TableBody from '../components/TableBody'
@@ -34,7 +33,6 @@ class Home extends Component {
         const searchDate = moment(date).format('YYYY-MM-DD')
 
         const query = jsonQuery(`[formattedDate=${searchDate}]`, { data: this.props.ranks })
-        //const query = jsonQuery(`[formattedDate=${searchDate}]`, { data: mockRanks })
         //console.log(query.value)
         if (query.value) {
             const listApps = jsonQuery('name', { data: query.value.keywords })
@@ -68,9 +66,7 @@ class Home extends Component {
         this.setState({ endDate: date })
 
         const searchDate = moment(date).format('YYYY-MM-DD')
-
         const query = jsonQuery(`[formattedDate=${searchDate}]`, { data: this.props.ranks })
-        //const query = jsonQuery(`[formattedDate=${searchDate}]`, { data: mockRanks })
 
         if (query.value) {
             this.setState({ listSecondRank: query.value.keywords })

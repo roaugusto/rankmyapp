@@ -1,4 +1,4 @@
-export const mockRanks = [
+export const data = [
     {
         "date": "2018-02-10T00:00:Z",
         "formattedDate": "2018-02-10",
@@ -194,6 +194,24 @@ export const mockRanks = [
                 "name": "App c",
                 "text": "BBBB",
                 "position": 13
+            },
+            {
+                "appId": "001",
+                "name": "App A",
+                "text": "CCCC",
+                "position": 2
+            },
+            {
+                "appId": "002",
+                "name": "App B",
+                "text": "CCCC",
+                "position": null
+            },
+            {
+                "appId": "003",
+                "name": "App c",
+                "text": "CCCC",
+                "position": 22
             },
             {
                 "appId": "001",
