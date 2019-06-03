@@ -1,0 +1,5 @@
+export const LOAD_RANKING = 'LOAD_RANKING'
+export const SET_COLS = 'SET_COLS'
+export const SET_WORDS = 'SET_WORDS'
+export const SET_FIRST_LIST = 'SET_FIRST_LIST'
+export const SET_SECOND_LIST = 'SET_SECOND_LIST'
