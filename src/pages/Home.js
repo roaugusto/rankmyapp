@@ -32,17 +32,22 @@ class Home extends Component {
         this.setState({ startDate: date })
         const searchDate = moment(date).format('YYYY-MM-DD')
 
+        // obtendo todos os ranks de uma data especifica
         const query = jsonQuery(`[formattedDate=${searchDate}]`, { data: this.props.ranks })
-        //console.log(query.value)
+        
+        // gravando informacoes da primeira lista
         if (query.value) {
+            // obtendo a lista de nome de apps para formatar o header
             const listApps = jsonQuery('name', { data: query.value.keywords })
             const uniqueApps = new Set(listApps.value)
             const cols = [...uniqueApps]
 
+            // obtendo a lista de keywords
             const listWords = jsonQuery('text', { data: query.value.keywords })
             const uniqueWords = new Set(listWords.value)
             const words = [...uniqueWords]
 
+            // gravando informacoes na store
             this.props.onSetCols(cols)
             this.props.onSetWords(words)
             this.props.onFirstList(query.value.keywords)
@@ -65,10 +70,12 @@ class Home extends Component {
 
         this.setState({ endDate: date })
 
+        // obtendo todos os ranks de uma data especifica
         const searchDate = moment(date).format('YYYY-MM-DD')
         const query = jsonQuery(`[formattedDate=${searchDate}]`, { data: this.props.ranks })
 
-        if (query.value) {
+        // gravando informacoes da segunda lista
+        if (query.value) {            
             this.setState({ listSecondRank: query.value.keywords })
             this.props.onSecondList(query.value.keywords)
         } else {
@@ -86,7 +93,7 @@ class Home extends Component {
                     <div className="title-ranking">
                         Ranking de Keywords
                     </div>
-
+                    
                     <div className="row">
                         <div className="col-sm-4">
 

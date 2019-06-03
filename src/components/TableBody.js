@@ -12,13 +12,17 @@ class TableBody extends Component {
     return (
       <tbody>
 
+        
         {
+          // realizando iteração da lista de palavras
           this.props.words.map((item, index) => {
 
             const result = []
+            // Para cada palavra da lista de palavras, buscar a posicao para cada um dos apps 
             const firstListPos = jsonQuery(`[*text=${item}]position`, { data: this.props.firstList })
             const secondListPos = jsonQuery(`[*text=${item}]position`, { data: this.props.secondList })
 
+            // criar objeto unico com a posicao das duas listas.
             for (let i = 0; i <= firstListPos.value.length - 1; i++) {
               result.push({
                 p1: firstListPos.value[i],
@@ -26,10 +30,12 @@ class TableBody extends Component {
               })
             }
 
+            // calcular a diferenca das posicoes e formatar conforme resultado,
+            // demonstrando uma seta para cima ou para baixo.
+
             return (
               <tr key={index}>
                 <th key={index} scope="row">{item}</th>
-
                 {result.map((el, i) => {
                   let dif = 0
                   let showDif = ''
