@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Example
 
-https://rankmyapp-sraopnffkr.now.sh/
+https://rankmyapp-yulsmxswpv.now.sh/
 
 ## Available Scripts
 
